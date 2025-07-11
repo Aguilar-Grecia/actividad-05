@@ -19,7 +19,7 @@ class Estudiante:
                     print("La nota tiene que estar entre 0 y 100.")
             except ValueError:
                 print("Ingreso un numero fuera del rango mencionado. Por favor, intentelo de nuevo.")
-        nuevo_estudiante = Estudiante(nombre, carné, carrera, nota_final)
+        nuevo_estudiante = Estudiante(nombre, carne, carrera, nota_final)
         self.estudiante.append(nuevo_estudiante)
         print(f"Estudiante {nombre} con carné {carne}, ha sigo registrado exitosamente. ")
     def mostrar_estudiantes(self):
@@ -32,4 +32,11 @@ class Estudiante:
             print(f"Carne: {estudiante.carne}")
             print(f"Carrera: {estudiante.carrera}")
             print(f"Nota final: {estudiante.nota_final}")
+    def buscar_estudiante_por_su_carne(self):
+        if not self.estudiante:
+            print("No hay ningun estudiante registrado para buscar")
+            return
+        print("---Buscar etudiante por su carne---")
+        carne_buscar = input("Ingrese el carne del estudiante que desea bucar: ")
+
 
