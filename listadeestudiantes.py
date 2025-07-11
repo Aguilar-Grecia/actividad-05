@@ -22,4 +22,14 @@ class Estudiante:
         nuevo_estudiante = Estudiante(nombre, carné, carrera, nota_final)
         self.estudiante.append(nuevo_estudiante)
         print(f"Estudiante {nombre} con carné {carne}, ha sigo registrado exitosamente. ")
+    def mostrar_estudiantes(self):
+        if not self.estudiante:
+            print("No hay ningun estudiante registrado")
+            return
+        print("---Listado de estudiantes registrados---")
+        for estudiante in self.estudiante:
+            print(f"Nombre: {estudiante.nombre}")
+            print(f"Carne: {estudiante.carne}")
+            print(f"Carrera: {estudiante.carrera}")
+            print(f"Nota final: {estudiante.nota_final}")
 
