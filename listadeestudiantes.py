@@ -15,4 +15,10 @@ class Estudiante:
         print("Registrar nuevo estudiante")
         nombre = input("Ingrese el carne del nuevo estudiante: ")
         carrera = input("Ingrese el carrera del nuevo estudiante: ")
+        while True:
+            try:
+                nota_final = float(input("Ingrese la nota final del estudiante: "))
+                if 0 <= nota_final <= 100:
+                    break
+                else:
 
