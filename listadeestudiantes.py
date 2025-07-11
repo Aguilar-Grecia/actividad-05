@@ -4,11 +4,6 @@ class Estudiante:
         self.carne = carne
         self.carrera = carrera
         self.nota_final = nota_final
-    def __str__(self):
-        print(f"Nombre: {self.nombre}")
-        print(f"Carne: {self.carne}")
-        print(f"Carrera: {self.carrera}")
-        print(f"Nota final: {self.nota_final}")
     def __init__(self):
         self.estudiante = []
     def registrar_estudiante(self):
@@ -21,4 +16,10 @@ class Estudiante:
                 if 0 <= nota_final <= 100:
                     break
                 else:
+                    print("La nota tiene que estar entre 0 y 100.")
+            except ValueError:
+                print("Ingreso un numero fuera del rango mencionado. Por favor, intentelo de nuevo.")
+        nuevo_estudiante = Estudiante(nombre, carné, carrera, nota_final)
+        self.estudiante.append(nuevo_estudiante)
+        print(f"Estudiante {nombre} con carné {carne}, ha sigo registrado exitosamente. ")
 
