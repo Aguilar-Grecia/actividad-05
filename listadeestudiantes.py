@@ -9,4 +9,10 @@ class Estudiante:
         print(f"Carne: {self.carne}")
         print(f"Carrera: {self.carrera}")
         print(f"Nota final: {self.nota_final}")
+    def __init__(self):
+        self.estudiante = []
+    def registrar_estudiante(self):
+        print("Registrar nuevo estudiante")
+        nombre = input("Ingrese el carne del nuevo estudiante: ")
+        carrera = input("Ingrese el carrera del nuevo estudiante: ")
 
