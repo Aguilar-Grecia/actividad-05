@@ -55,4 +55,16 @@ class Sistema:
             print("4. Calcular promedio")
             print("5. Salir")
             opcion = input("Seleccione una opción: ")
-
+            if opcion == "1":
+                self.registrar_estudiante()
+            elif opcion == "2":
+                self.mostrar_todos()
+            elif opcion == "3":
+                self.buscar_estudiante_por_su_carne()
+            elif opcion == "4":
+                self.calcular_promedio()
+            elif opcion == "5":
+                print("Estas saliendo del sistema de registro.")
+                break
+            else:
+                print("Opcion no valida.")
