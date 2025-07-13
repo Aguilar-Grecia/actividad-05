@@ -10,34 +10,37 @@ class Estudiante:
         nombre = input("Nombre: ")
         carne = input("Carne: ")
         carrera = input("Carrera: ")
-        while True:
-            try:
-                nota_final = float(input("Ingrese la nota final del estudiante: "))
-                if 0 <= nota_final <= 100:
-                    break
-                else:
-                    print("La nota tiene que estar entre 0 y 100.")
-            except ValueError:
-                print("Ingreso un numero fuera del rango mencionado. Por favor, intentelo de nuevo.")
-        nuevo_estudiante = Estudiante(nombre, carne, carrera, nota_final)
-        self.estudiante.append(nuevo_estudiante)
-        print(f"Estudiante {nombre} con carné {carne}, ha sigo registrado exitosamente. ")
-    def mostrar_estudiantes(self):
-        if not self.estudiante:
-            print("No hay ningun estudiante registrado")
+        try:
+            nota_final = float(input("Nota final: "))
+        except ValueError:
+            print("La nota no es valida. Intentelo de nuevo. ")
             return
-        print("---Listado de estudiantes registrados---")
-        for estudiante in self.estudiante:
-            print(f"Nombre: {estudiante.nombre}")
-            print(f"Carne: {estudiante.carne}")
-            print(f"Carrera: {estudiante.carrera}")
-            print(f"Nota final: {estudiante.nota_final}")
+        estudiante = Estudiante(nombre, carne, carrera, nota_final)
+        self.estudiante.append(estudiante)
+        print("El estudiante ha registrado correctamente. ")
+    def mostrar_todos(self):
+        if not self.estudiantes:
+            print("No hay ningun estudiante registrado. ")
+        else:
+            print("Lista de estudiantes:")
+            for estudiante in self.estudiantes:
+                estudiante.mostrar()
+            print()
     def buscar_estudiante_por_su_carne(self):
-        if not self.estudiante:
-            print("No hay ningun estudiante registrado para buscar")
-            return
-        print("---Buscar etudiante por su carne---")
-        carne_buscar = input("Ingrese el carne del estudiante que desea bucar: ")
-        
-
-
+        carne_buscar = input("Por favor, ingrese el carné del estudiante: ")
+        encontrado = False
+        for estudiante in self.estudiantes:
+            if estudiante.carne == carne_buscar:
+                print("Estudiante encontrado: ")
+                estudiante.mostrar()
+                encontrado = True
+                break
+        if not encontrado:
+            print("El estudiante no ha sido encontrado.")
+    def calcular_promedio(self):
+        if  not self.estudiantes:
+            print("No se han registrado notas, no es posible calcular el promedio.")
+        else:
+            total = sum(estudiante.nota_final for estudiante in self.estudiantes)
+            promedio = total/ len(self.estudaintes)
+            print(f"Promedio: {promedio}")
