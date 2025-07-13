@@ -4,12 +4,12 @@ class Estudiante:
         self.carne = carne
         self.carrera = carrera
         self.nota_final = nota_final
-    def __init__(self):
-        self.estudiante = []
+    def _mostrar(self):
+        print(f"Nombre: {self.nombre}, Carné: {self.carne}, Carrera:{self.carrera} Nota final: {self.nota_final}")
     def registrar_estudiante(self):
-        print("Registrar nuevo estudiante")
-        nombre = input("Ingrese el carne del nuevo estudiante: ")
-        carrera = input("Ingrese el carrera del nuevo estudiante: ")
+        nombre = input("Nombre: ")
+        carne = input("Carne: ")
+        carrera = input("Carrera: ")
         while True:
             try:
                 nota_final = float(input("Ingrese la nota final del estudiante: "))
@@ -38,5 +38,6 @@ class Estudiante:
             return
         print("---Buscar etudiante por su carne---")
         carne_buscar = input("Ingrese el carne del estudiante que desea bucar: ")
+        
 
 
