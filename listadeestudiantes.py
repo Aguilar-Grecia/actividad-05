@@ -4,8 +4,11 @@ class Estudiante:
         self.carne = carne
         self.carrera = carrera
         self.nota_final = nota_final
-    def _mostrar(self):
+    def mostrar(self):
         print(f"Nombre: {self.nombre}, Carné: {self.carne}, Carrera:{self.carrera} Nota final: {self.nota_final}")
+class Sistema:
+    def __init__(self):
+        self.estudiantes = []
     def registrar_estudiante(self):
         nombre = input("Nombre: ")
         carne = input("Carne: ")
@@ -44,3 +47,12 @@ class Estudiante:
             total = sum(estudiante.nota_final for estudiante in self.estudiantes)
             promedio = total/ len(self.estudaintes)
             print(f"Promedio: {promedio}")
+    def main(self):
+        while True:
+            print("1. Registrar estudiante.")
+            print("2. Mostrar estudiantes.")
+            print("3. Buscar estudiante en la lista.")
+            print("4. Calcular promedio")
+            print("5. Salir")
+            opcion = input("Seleccione una opción: ")
+
